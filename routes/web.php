@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MyPlaceController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,3 +44,5 @@ Route::get('/idk', function() {
 Route::get('/idk2', function() {
     return 'I still dont know what to add but it\'s a final page!';
 });
+
+Route::get('/main-page', [MyPlaceController::class, 'index']);
