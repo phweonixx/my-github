@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyPlaceController;
+use App\Http\Controllers\PostsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -46,3 +47,5 @@ Route::get('/idk2', function() {
 });
 
 Route::get('/main-page', [MyPlaceController::class, 'index']);
+
+Route::get('/get-posts', [PostsController::class, 'getposts']);
