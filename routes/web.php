@@ -53,3 +53,5 @@ Route::get('/get-post-published', [PostsController::class, 'getfirstpublishedpos
 Route::get('/get-post-unpublished', [PostsController::class, 'getfirstunpublishedpost']);
 
 Route::get('/get-all-posts', [PostsController::class, 'getallposts']);
+
+Route::get('/posts/create', [PostsController::class, 'create']);

@@ -30,4 +30,18 @@ class PostsController extends Controller
 
         return $postsTitles;
     }
+
+    public function create() {
+        $postAttributes = [
+            'title' => 'Some title',
+            'content' => 'Some content',
+            'image' => 'image.png',
+            'likes' => 15,
+            'is_published' => 1
+        ];
+
+        Post::create($postAttributes);
+
+        return $postAttributes;
+    }
 }
