@@ -44,4 +44,12 @@ class PostsController extends Controller
 
         return $postAttributes;
     }
+
+    public function update() {
+        $post = Post::find(1);
+
+        $post->update([
+            'title' => 'Updated title!'
+        ]);
+    }
 }
