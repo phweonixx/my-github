@@ -8,14 +8,20 @@ use App\Models\Post;
 
 class PostsController extends Controller
 {
-    public function getFirstPost() {
-        $post = Post::find(1);
+    public function getFirstPublishedPost() {
+        $publishedPost = Post::where('is_published', 1)->first();
 
-        return $post;
+        return $publishedPost;
+    }
+
+    public function getFirstUnpublishedPost() {
+        $unpublishedPost = Post::where('is_published', 0)->first();
+
+        return $unpublishedPost;
     }
 
     public function getAllPosts() {
-        $allPosts = Post::all();
+        $allPosts = Post::where('is_published', 1)->get();
 
         $postsTitles = [];
         foreach ($allPosts as $post) {
