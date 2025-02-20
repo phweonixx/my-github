@@ -48,4 +48,6 @@ Route::get('/idk2', function() {
 
 Route::get('/main-page', [MyPlaceController::class, 'index']);
 
-Route::get('/get-posts', [PostsController::class, 'getposts']);
+Route::get('/get-post', [PostsController::class, 'getpost']);
+
+Route::get('/get-all-posts', [PostsController::class, 'getallposts']);
