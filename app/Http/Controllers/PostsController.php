@@ -52,4 +52,16 @@ class PostsController extends Controller
             'title' => 'Updated title!'
         ]);
     }
+
+    public function delete() {
+        $post = Post::find(1);
+
+        $post->delete();
+    }
+
+    public function restore() {
+        $post = Post::withTrashed()->find(1);
+
+        $post->restore();
+    }
 }
