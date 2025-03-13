@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CodeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyPlaceController;
 use App\Http\Controllers\PostsController;
@@ -61,3 +62,18 @@ Route::get('/posts/update', [PostsController::class, 'update']);
 Route::get('/posts/delete', [PostsController::class, 'delete']);
 
 Route::get('/posts/restore', [PostsController::class, 'restore']);
+
+
+
+
+
+
+Route::get('/home', function() {
+    return view('home');
+})->name('home');
+
+Route::get('/code/create', function() {
+    return view('code_create');
+})->name('code.create');
+
+Route::post('/code/store', [CodeController::class, 'store'])->name('code.store');
